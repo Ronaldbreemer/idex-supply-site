@@ -33,7 +33,7 @@ const isActive = (href: string) => (href === homeHref ? path === homeHref : path
       <a class={isActive(link("contact")) ? "active" : ""} href={link("contact")}>{c.nav.contact}</a>
     </nav>
 
-    <div style="display:flex; gap:10px; align-items:center; margin-left:12px;">
+    <div class="nav-actions" style="display:flex; gap:10px; align-items:center; margin-left:12px;">
       <LanguageSwitcher lang={lang} pathname={Astro.url.pathname} />
       <span class="nav-sep" aria-hidden="true"></span>
       <a class="nav-cta" href={link("contact") + "?intent=intake"}>{c.cta.intake}</a>

@@ -523,6 +523,10 @@ header.siteHeader{
 }
 .links a.active{ color: rgba(11,18,32,.96); }
 @media (max-width: 980px){ .links{ display:none; } }
+@media (max-width: 980px){
+  .nav-cta{ display:none; }
+  .nav-sep{ display:none; }
+}
 
 .mobile{ display:none; }
 @media (max-width: 980px){ .mobile{ display:block; } }
