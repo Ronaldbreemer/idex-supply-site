@@ -1,0 +1,32 @@
+---
+const { kicker, title, body, primaryHref, primaryLabel, secondaryHref, secondaryLabel, metaItems } = Astro.props;
+const meta = metaItems ?? ["Fixed scope / fixed price", "Overdraagbaar (docs + broncode)", "KPI-gedreven aanpak"];
+---
+<section class="section">
+  <div class="container">
+    <div class="consolePanel cta-panel">
+      <div class="consolePanelHeader">
+        <strong>{kicker ?? "IDEX Supply"}</strong>
+      </div>
+      <div class="consolePanelBody" style="grid-template-columns: 1fr;">
+        <div class="consoleService">
+          <h3>{title}</h3>
+          <p>{body}</p>
+          <div class="consoleActions">
+            {primaryHref && primaryLabel ? (
+              <a class="consoleButton" href={primaryHref}>{primaryLabel}</a>
+            ) : null}
+            {secondaryHref && secondaryLabel ? (
+              <a class="consoleButton ghost" href={secondaryHref}>{secondaryLabel}</a>
+            ) : null}
+          </div>
+          <div class="consoleMeta">
+            {meta.map((item) => (
+              <span>{item}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

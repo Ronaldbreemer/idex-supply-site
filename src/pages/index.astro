@@ -1,0 +1,46 @@
+---
+export const prerender = false;
+
+const js = String.raw`(() => {
+  try {
+    const langs = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || "en"];
+    const pref = (langs[0] || "en").toLowerCase();
+    const lang = (pref.startsWith("nl") ? "nl" : pref.startsWith("it") ? "it" : "en");
+    const target = "/" + lang + "/";
+    if (location.pathname === "/" && !location.search.includes("noredirect=1")) {
+      location.replace(target + location.search + location.hash);
+    }
+  } catch (e) {}
+})();`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>IDEX Supply</title>
+    <script is:inline>{js}</script>
+    <style>
+      :root{ color-scheme: light; }
+      html, body{ margin:0; padding:0; background:#f6f2ea; }
+      body{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      .noscript{ max-width: 720px; margin: 48px auto; padding: 0 24px; color:#0b1220; }
+      .noscript a{ color:#0b1220; font-weight:700; text-decoration:none; }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript">
+        <p>JavaScript is vereist voor automatische taalkeuze.</p>
+        <p>
+          <a href="/nl/">Nederlands</a> ·
+          <a href="/en/">English</a> ·
+          <a href="/it/">Italiano</a>
+        </p>
+      </div>
+    </noscript>
+  </body>
+</html>

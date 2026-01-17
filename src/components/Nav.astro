@@ -1,0 +1,59 @@
+---
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { t, withLang } from "../lib/i18n";
+
+const { lang } = Astro.props;
+const c = t(lang);
+const path = Astro.url.pathname;
+
+const link = (slug: string) => withLang(lang, slug);
+const homeHref = link("");
+
+const isActive = (href: string) => (href === homeHref ? path === homeHref : path.startsWith(href));
+---
+<header class="siteHeader">
+  <div class="container navbar">
+    <a class="brand" href={homeHref} aria-label={c.common.brandName}>
+      <img
+        src="/logo.png"
+        alt={c.common.logoAlt}
+        loading="eager"
+        onerror="this.style.display='none'; this.parentElement.querySelector('.brandMark').style.display='grid';"
+      />
+      <!-- <div class="brandMark" style="display:none;">ID</div>
+      <span>IDEX Supply</span> -->
+    </a>
+
+    <nav class="links" aria-label={c.nav.primaryLabel}>
+      <a class={isActive(link("")) ? "active" : ""} href={link("")}>{c.nav.home}</a>
+      <a class={isActive(link("werkwijze-garanties")) ? "active" : ""} href={link("werkwijze-garanties")}>{c.nav.garanties}</a>
+      <a class={isActive(link("standaardsoftware")) ? "active" : ""} href={link("standaardsoftware")}>{c.nav.standaard}</a>
+      <a class={isActive(link("werkwijze")) ? "active" : ""} href={link("werkwijze")}>{c.nav.werkwijze}</a>
+      <a class={isActive(link("faq")) ? "active" : ""} href={link("faq")}>{c.nav.faq}</a>
+      <a class={isActive(link("contact")) ? "active" : ""} href={link("contact")}>{c.nav.contact}</a>
+    </nav>
+
+    <div style="display:flex; gap:10px; align-items:center; margin-left:12px;">
+      <LanguageSwitcher lang={lang} pathname={Astro.url.pathname} />
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a class="nav-cta" href={link("contact") + "?intent=intake"}>{c.cta.intake}</a>
+
+      <div class="mobile">
+        <details>
+          <summary aria-label={c.nav.menuLabel}>☰</summary>
+          <div class="panel" role="menu">
+            <a class="btn btn-primary " style="width:100%; margin-bottom:8px;" href={link("contact") + "?intent=intake"}>{c.cta.intake}</a>
+            <a href={link("")} role="menuitem">{c.nav.home}</a>
+            <a href={link("werkwijze-garanties")} role="menuitem">{c.nav.garanties}</a>
+            <a href={link("standaardsoftware")} role="menuitem">{c.nav.standaard}</a>
+            <a href={link("werkwijze")} role="menuitem">{c.nav.werkwijze}</a>
+            <a href={link("faq")} role="menuitem">{c.nav.faq}</a>
+            <a href={link("contact")} role="menuitem">{c.nav.contact}</a>
+            <div class="hr"></div>
+            <a class="btn" style="width:100%; border-radius:14px;" href="https://idexdemo.nl" target="_blank" rel="noopener">{c.nav.app}</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</header>

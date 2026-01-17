@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+---
+<BaseLayout title={`${c.standaard.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">{c.standaard.kicker}</div>
+        <h1 style="margin-top:10px;">{c.standaard.title}</h1>
+        <p style="margin-top:12px; max-width:95ch;">{c.standaard.intro}</p>
+
+        <div class="split" style="margin-top:14px;">
+          <div class="card flat">
+            <div class="kicker">{c.standaard.whenTitle}</div>
+            <ul class="list">
+              {c.standaard.when.map((x) => (
+                <li class="li"><span class="check"></span><p>{x}</p></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="card flat">
+            <div class="kicker">{c.standaard.lowcodeTitle}</div>
+            <p style="margin-top:10px;">{c.standaard.lowcodeBody}</p>
+            <div class="btnrow">
+              <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+              <a class="btn btn-ghost" href={L("werkwijze-garanties")}>{c.nav.garanties}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h2>{c.standaard.tableTitle}</h2>
+        <div class="tableWrap">
+          <table class="table">
+            <thead>
+              <tr>
+                {c.standaard.tableHeadings.map((h) => (
+                  <th>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {c.standaard.table.map((r) => (
+                <tr>
+                  <td><strong>{r[0]}</strong></td>
+                  <td>{r[1]}</td>
+                  <td>{r[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker={c.standaard.ctaKicker}
+    title={c.standaard.ctaTitle}
+    body={c.standaard.ctaBody}
+    primaryHref={L("contact") + "?intent=intake"}
+    primaryLabel={c.cta.intake}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>

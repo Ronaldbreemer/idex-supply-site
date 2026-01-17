@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+---
+<BaseLayout title={`${c.werkwijze.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">{c.werkwijze.kicker}</div>
+        <h1 style="margin-top:10px;">{c.werkwijze.title}</h1>
+        <p style="margin-top:12px; max-width:92ch;">{c.werkwijze.intro}</p>
+
+        <div class="split" style="margin-top:14px;">
+          <div class="card flat">
+            <div class="kicker">{c.werkwijze.youGetTitle}</div>
+            <ul class="list">
+              {c.werkwijze.youGet.map((x) => (
+                <li class="li"><span class="check"></span><p>{x}</p></li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="card flat">
+            <div class="kicker">{c.werkwijze.stepsTitle}</div>
+            <ol style="margin:12px 0 0; padding-left:18px; display:grid; gap:10px; color:rgba(11,18,32,.86); font-weight:750;">
+              {c.werkwijze.steps.map((s) => <li>{s}</li>)}
+            </ol>
+            <div class="hr"></div>
+            <p>{c.werkwijze.close}</p>
+            <div class="btnrow">
+              <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+              <a class="btn btn-ghost" href={L("contact") + "?intent=scan"}>{c.cta.scan}</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker={c.werkwijze.ctaKicker}
+    title={c.werkwijze.ctaTitle}
+    body={c.werkwijze.ctaBody}
+    primaryHref={L("contact") + "?intent=intake"}
+    primaryLabel={c.cta.intake}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>

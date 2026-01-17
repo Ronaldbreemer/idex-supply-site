@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+---
+<BaseLayout title={`${c.garanties.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">{c.garanties.kicker}</div>
+        <h1 style="margin-top:10px;">{c.garanties.title}</h1>
+        <p style="margin-top:12px; max-width:92ch;">{c.garanties.intro}</p>
+
+        <div class="grid cols-3" style="margin-top:14px;">
+          {c.garanties.bullets.map((b) => (
+            <div class="card flat">
+              <h3>{b[0]}</h3>
+              <p style="margin-top:8px;">{b[1]}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="split">
+          <div>
+            <h2>{c.garanties.continuityTitle}</h2>
+            <p style="margin-top:12px;">{c.garanties.continuityBody}</p>
+          </div>
+
+          <div class="card flat">
+            <div class="kicker">{c.garanties.practicalKicker}</div>
+            <h3 style="margin-top:8px;">{c.garanties.practicalTitle}</h3>
+            <p style="margin-top:8px;">{c.garanties.practicalBody}</p>
+            <div class="btnrow">
+              <a class="btn btn-ghost" href={L("contact") + "?intent=scan"}>{c.cta.scan}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker={c.garanties.ctaKicker}
+    title={c.garanties.ctaTitle}
+    body={c.garanties.ctaBody}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>

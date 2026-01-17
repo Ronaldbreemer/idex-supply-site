@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { langFromParams, t } from "../../lib/i18n";
+
+export const prerender = false;
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const sent = Astro.url.searchParams.get("sent") === "1";
+const error = Astro.url.searchParams.get("error") === "1";
+const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
+
+---
+<BaseLayout title={`${c.contact.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">{c.contact.kicker}</div>
+        <h1 style="margin-top:10px;">{c.contact.title}</h1>
+        <p style="margin-top:12px;">{c.contact.intro}</p>
+        {sent ? <p class="badge" style="margin-top:12px;">{c.contact.successMessage}</p> : null}
+        {error ? <p class="badge" style="margin-top:12px;">{c.contact.errorMessage}</p> : null}
+
+        <div class="split" style="margin-top:14px;">
+          <div class="card flat">
+            <h3>{c.contact.company}</h3>
+            <p style="margin-top:10px;">
+              {c.contact.address.map((line) => (<>{line}<br /></>))}
+            </p>
+
+            <div class="btnrow">
+              <a class="btn btn-primary" href={`mailto:${c.contact.email}`}>{c.contact.email}</a>
+              <a class="btn" href={`tel:${c.contact.phoneTel}`}>{c.contact.phoneLabel}</a>
+            </div>
+
+            <p style="margin-top:14px; color: rgba(11,18,32,.72);">
+              {c.contact.kvk}<br />
+              {c.contact.btw}
+            </p>
+          </div>
+
+          <div class="card flat">
+            <h3>{c.contact.formTitle}</h3>
+            <p style="margin-top:8px; color: rgba(11,18,32,.72);">{c.contact.formNote}</p>
+
+            <form method="post" action="/api/contact/" style="margin-top:12px; display:grid; gap:10px;">
+              <input type="hidden" name="lang" value={lang} />
+              <select name="intent" class="btn" style="border-radius:14px; justify-content:flex-start;">
+                <option value="scan" selected={intentParam === "scan"}>{c.contact.intentScan}</option>
+                <option value="intake" selected={intentParam === "intake"}>{c.contact.intentIntake}</option>
+              </select>
+
+              <input name="name" required placeholder={c.contact.namePlaceholder} class="btn" style="border-radius:14px; justify-content:flex-start;" />
+              <input name="email" type="email" required placeholder={c.contact.emailPlaceholder} class="btn" style="border-radius:14px; justify-content:flex-start;" />
+              <textarea name="message" placeholder={c.contact.messagePlaceholder} rows="6"
+                class="btn" style="border-radius:14px; justify-content:flex-start; padding:12px 14px; line-height:1.4;"></textarea>
+
+              <button type="submit" class="btn btn-primary">{c.contact.submitLabel}</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

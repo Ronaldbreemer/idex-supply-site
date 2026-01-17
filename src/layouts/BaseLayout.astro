@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description, lang } = Astro.props;
+const metaTitle = title ?? "IDEX Supply";
+const metaDesc = description ?? "IDEX Supply";
+const currentLang = lang ?? "en";
+---
+<!doctype html>
+<html lang={currentLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDesc} />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>{metaTitle}</title>
+
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <Nav lang={currentLang} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={currentLang} />
+  </body>
+</html>

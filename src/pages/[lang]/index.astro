@@ -1,0 +1,170 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+---
+<BaseLayout title={c.meta.title} description={c.meta.desc} lang={lang}>
+  <section class="section hero">
+    <div class="container">
+      <div class="heroBand">
+        <div class="heroPad">
+          <div class="badge">
+            <span class="dot"></span>
+            <span class="kicker">{c.home.kicker}</span>
+          </div>
+
+          <div class="heroRow" style="margin-top:16px;">
+            <div class="heroMain">
+              <h1 class="heroTitle">{c.home.heroTitle}</h1>
+              <p class="heroSub">{c.home.heroSub}</p>
+
+              <div class="btnrow">
+                <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+                <a class="btn btn-ghost" href={L("contact") + "?intent=scan"}>{c.home.scanAlt}</a>
+              </div>
+              <div class="cta-sub">{c.home.ctaSub}</div>
+
+              <ul class="list" style="margin-top:14px;">
+                {c.home.pills.map((p) => (
+                  <li class="li"><span class="check"></span><p>{p}</p></li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="heroAside">
+              <div class="card hero-card card--raised">
+                <div class="kicker">{c.home.resultsTitle}</div>
+                <h3 style="margin-top:8px;">{c.home.problemTitle}</h3>
+                <ul class="list" style="margin-top:10px;">
+                  {c.home.results.slice(0, 2).map((x) => (
+                    <li class="li"><span class="check"></span><p>{x}</p></li>
+                  ))}
+                </ul>
+                <details class="accordion" style="margin-top:10px;">
+                <summary class="text-link">{c.home.tooltipTitle}</summary>
+                  <p>{c.home.tooltipBody}</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:16px;">
+        <div class="card">
+          <div class="kicker">{c.home.problemTitle}</div>
+          <h3 style="margin-top:10px;">{c.home.problemCardTitle}</h3>
+          <p style="margin-top:10px;">{c.home.problemBody}</p>
+        </div>
+        <div class="card">
+          <div class="kicker">{c.home.resultsTitle}</div>
+          <h3 style="margin-top:10px;">{c.home.resultsCardTitle}</h3>
+          <ul class="list compact">
+            {c.home.results.map((x) => (
+              <li class="li"><span class="check"></span><p>{x}</p></li>
+            ))}
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">{c.home.demoKicker}</div>
+          <h3 style="margin-top:10px;">{c.home.demoTitle}</h3>
+          <p style="margin-top:10px;">{c.home.demoBody}</p>
+          <div class="btnrow">
+            <!-- <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a> -->
+            <!-- <a class="btn btn-primary" href={L("app")}>Bekijk app demo</a> -->
+          </div>
+          <div style="margin-top:10px;">
+            <a class="text-link" href="https://idexdemo.nl" target="_blank" rel="noopener">{c.home.demoLink}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="card">
+        <div class="kicker">{c.home.forWhoTitle}</div>
+        <h2 style="margin-top:10px;">{c.home.forWhoHeading}</h2>
+        <p style="margin-top:12px;">{c.home.forWhoBody}</p>
+        <ul class="list">
+          {c.home.forWhoBullets.map((x) => (
+            <li class="li"><span class="check"></span><p>{x}</p></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">{c.home.offerTitle}</div>
+        <h2 style="margin-top:10px;">{c.home.offerHeading}</h2>
+        <div class="grid" style="margin-top:12px;">
+          {c.home.offer.map((o) => (
+            <div class="card flat">
+              <h3>{o.t}</h3>
+              <p style="margin-top:8px;">{o.d}</p>
+              <div class="badge" style="margin-top:10px;">
+                <span class="dot"></span>
+                <strong>{o.meta}</strong>
+              </div>
+              <a class="text-link intake-link" href={L("contact") + "?intent=intake"}>{c.home.intakeNudge}</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">{c.home.approachTitle}</div>
+        <h2 style="margin-top:10px;">{c.home.approachHeading}</h2>
+
+        <div class="grid cols-3" style="margin-top:14px;">
+          {c.home.steps.map((s) => (
+            <div class="card flat">
+              <h3>{s[0]}</h3>
+              <p style="margin-top:8px;">{s[1]}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="split">
+          <div>
+            <h3>{c.home.supportTitle}</h3>
+            <p style="margin-top:10px;">{c.home.supportBody}</p>
+          </div>
+          <div class="card flat">
+            <div class="kicker">{c.home.tipKicker}</div>
+            <h3 style="margin-top:8px;">{c.home.tipTitle}</h3>
+            <p style="margin-top:8px;">{c.home.tipBody}</p>
+            <div class="btnrow">
+              <!-- <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a> -->
+              <a class="btn btn-cta" href={L("contact") + "?intent=scan"}>{c.cta.scan}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker="IDEX Supply"
+    title={c.home.bottomCtaTitle}
+    body={c.home.bottomCtaBody}
+    primaryHref={L("contact") + "?intent=intake"}
+    primaryLabel={c.cta.intake}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>

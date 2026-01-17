@@ -1,0 +1,24 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+
+const { title, description, lang } = Astro.props;
+const metaTitle = title ?? "IDEX Supply App";
+const metaDesc = description ?? "IDEX Supply App demo";
+const currentLang = lang ?? "en";
+---
+<!doctype html>
+<html lang={currentLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDesc} />
+    <title>{metaTitle}</title>
+  </head>
+  <body>
+    <Nav lang={currentLang} />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

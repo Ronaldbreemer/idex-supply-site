@@ -1,0 +1,170 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+const ui = c.appDemo;
+const active = "inventory";
+---
+
+<AppLayout title={`${ui.pageTitle} — IDEX Supply`} description={ui.heroSub} lang={lang}>
+  <div class="consoleWrap">
+    <div class="container">
+      <div class="consoleShell">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="consoleSidebar">
+          <div class="consoleSideHeader">
+            <div class="crumb">{ui.crumb}</div>
+            <div class="title">{ui.pageTitle}</div>
+          </div>
+
+          <div class="consoleSideGroup">
+            <h4>{ui.sidebarOverviewTitle}</h4>
+            <a class="active" href="#">{ui.sidebarOverviewLink}</a>
+          </div>
+
+          <div class="consoleSideGroup">
+            <h4>{ui.sidebarDashboardsTitle}</h4>
+            {ui.sidebarDashboardsLinks.map((label) => (
+              <a href="#">{label}</a>
+            ))}
+          </div>
+
+          <div class="consoleSideGroup">
+            <h4>{ui.sidebarDiagnosticsTitle}</h4>
+            {ui.sidebarDiagnosticsLinks.map((label) => (
+              <a href="#">{label}</a>
+            ))}
+          </div>
+
+          <div class="consoleSideGroup">
+            <h4>{ui.sidebarAutomationTitle}</h4>
+            {ui.sidebarAutomationLinks.map((label) => (
+              <a href="#">{label}</a>
+            ))}
+          </div>
+
+          <div class="consoleSideGroup">
+            <h4>{ui.sidebarLinksTitle}</h4>
+            <a href={L("werkwijze")}>{ui.sidebarLinkWerkwijze}</a>
+            <a href={L("werkwijze-garanties")}>{ui.sidebarLinkGaranties}</a>
+            <a href={L("contact") + "?intent=intake"}>{ui.sidebarLinkIntake}</a>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="consoleContent">
+          <div class="consolePageTitle">{ui.pageTitle}</div>
+
+          <div class="consoleHero">
+            <h2>{ui.heroTitle}</h2>
+            <p>{ui.heroSub}</p>
+          </div>
+
+          <div class="consolePanel">
+            <div class="consolePanelHeader">
+              <strong>{ui.panelTitle}</strong>
+              <a href="#">{ui.collapse} ^</a>
+            </div>
+
+            <div class="consolePanelBody">
+              <div class="consoleTabs">
+                {ui.tabs.map((t) => (
+                  <a class={t.k === active ? "active" : ""} href="#">{t.label}</a>
+                ))}
+              </div>
+
+              <div class="consoleService">
+                <div class="consoleServiceRow">
+                  <div>
+                    <h3>{ui.serviceTitle}</h3>
+                    <p>{ui.serviceBody}</p>
+
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                      <a class="consoleButton" href={L("contact") + "?intent=scan"}>{ui.launch}</a>
+                      <a style="font-weight:900; color: rgba(11,18,32,.88);" href={L("werkwijze")}>{ui.learn}</a>
+                    </div>
+                  </div>
+
+                  <div class="diagram" aria-label="Demo diagram">
+                    <!-- simpele placeholder diagram (past bij Oracle console vibe) -->
+                    <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supply network diagram">
+                      <defs>
+                        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0" stop-color="rgba(47,59,74,.75)"/>
+                          <stop offset="1" stop-color="rgba(80,86,94,.65)"/>
+                        </linearGradient>
+                      </defs>
+
+                      <rect x="10" y="10" width="500" height="260" rx="6" fill="rgba(2,6,23,.02)" stroke="rgba(2,6,23,.12)"/>
+
+                      <circle cx="120" cy="80" r="18" fill="url(#g1)"/>
+                      <circle cx="260" cy="60" r="18" fill="url(#g1)"/>
+                      <circle cx="390" cy="95" r="18" fill="url(#g1)"/>
+
+                      <circle cx="170" cy="185" r="18" fill="url(#g1)"/>
+                      <circle cx="305" cy="195" r="18" fill="url(#g1)"/>
+                      <circle cx="430" cy="190" r="18" fill="url(#g1)"/>
+
+                      <path d="M138 80 L242 62" stroke="rgba(2,6,23,.20)" stroke-width="2"/>
+                      <path d="M278 62 L372 92" stroke="rgba(2,6,23,.20)" stroke-width="2"/>
+                      <path d="M130 92 L160 170" stroke="rgba(2,6,23,.20)" stroke-width="2"/>
+                      <path d="M260 78 L288 178" stroke="rgba(2,6,23,.20)" stroke-width="2"/>
+                      <path d="M388 112 L414 170" stroke="rgba(2,6,23,.20)" stroke-width="2"/>
+
+                      <rect x="60" y="225" width="150" height="30" rx="5" fill="rgba(2,6,23,.06)" stroke="rgba(2,6,23,.18)"/>
+                      <text x="72" y="245" font-size="12" font-family="system-ui" fill="rgba(11,18,32,.75)" font-weight="700">{ui.diagramLabel1}</text>
+
+                      <rect x="250" y="225" width="200" height="30" rx="5" fill="rgba(2,6,23,.06)" stroke="rgba(2,6,23,.18)"/>
+                      <text x="262" y="245" font-size="12" font-family="system-ui" fill="rgba(11,18,32,.75)" font-weight="700">{ui.diagramLabel2}</text>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="consoleSectionTitle">{ui.sec1}</div>
+          <div class="consoleCards">
+            {ui.cards1.map(([title, body]) => (
+              <div class="consoleCard">
+                <a href="#">{title}</a>
+                <p>{body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="consoleSectionTitle">{ui.sec2}</div>
+          <div class="consoleCards">
+            {ui.cards2.map(([title, body]) => (
+              <div class="consoleCard">
+                <a href="#">{title}</a>
+                <p>{body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="consoleSectionTitle">{ui.sec3}</div>
+          <div class="consoleCards">
+            {ui.cards3.map(([title, body]) => (
+              <div class="consoleCard">
+                <a href="#">{title}</a>
+                <p>{body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="consoleFooterHint">{ui.hint}</div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</AppLayout>
+

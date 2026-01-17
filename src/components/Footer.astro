@@ -1,0 +1,38 @@
+---
+import { t, withLang } from "../lib/i18n";
+const { lang } = Astro.props;
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+---
+<footer class="footer">
+  <div class="container footerGrid">
+    <div>
+      <div class="badge"><span class="dot"></span><strong>{c.common.brandName}</strong></div>
+      <p style="margin-top:12px; max-width:62ch;">
+        {c.footer.blurb}
+      </p>
+      <small style="display:block; margin-top:12px;">© {new Date().getFullYear()} IDEX Supply</small>
+    </div>
+
+    <div>
+      <div class="kicker">{c.nav.pages}</div>
+      <ul class="list">
+        <li><a href={L("werkwijze-garanties")}>{c.nav.garanties}</a></li>
+        <li><a href={L("standaardsoftware")}>{c.nav.standaard}</a></li>
+        <li><a href={L("faq")}>{c.nav.faq}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="kicker">{c.nav.contact}</div>
+      <ul class="list">
+        <li><a href="mailto:info@idexsupply.nl">info@idexsupply.nl</a></li>
+        <li><a href="tel:+31242070032">+31 (0)24 207 0032</a></li>
+        <li><a href="https://idexdemo.nl" target="_blank" rel="noopener">{c.nav.app}</a></li>
+      </ul>
+      <div style="margin-top:12px;">
+        <a class="btn btn-primary " href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+      </div>
+    </div>
+  </div>
+</footer>
