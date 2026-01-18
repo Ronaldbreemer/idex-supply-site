@@ -113,9 +113,11 @@ const L = (slug: string) => withLang(lang, slug);
                 <span class="dot"></span>
                 <strong>{o.meta}</strong>
               </div>
-              <a class="text-link intake-link" href={L("contact") + "?intent=intake"}>{c.home.intakeNudge}</a>
             </div>
           ))}
+        </div>
+        <div style="margin-top:10px;">
+          <a class="text-link intake-link" href={L("contact") + "?intent=intake"}>{c.home.intakeNudge}</a>
         </div>
       </div>
     </div>

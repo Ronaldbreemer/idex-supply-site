@@ -20,7 +20,7 @@ const L = (slug: string) => withLang(lang, slug);
 
         <div class="split" style="margin-top:14px;">
           <div class="card flat">
-            <div class="kicker">{c.werkwijze.youGetTitle}</div>
+            <div class="section-title">{c.werkwijze.youGetTitle}</div>
             <ul class="list">
               {c.werkwijze.youGet.map((x) => (
                 <li class="li"><span class="check"></span><p>{x}</p></li>
@@ -29,7 +29,7 @@ const L = (slug: string) => withLang(lang, slug);
           </div>
 
           <div class="card flat">
-            <div class="kicker">{c.werkwijze.stepsTitle}</div>
+            <div class="section-title">{c.werkwijze.stepsTitle}</div>
             <ol style="margin:12px 0 0; padding-left:18px; display:grid; gap:10px; color:rgba(11,18,32,.86); font-weight:750;">
               {c.werkwijze.steps.map((s) => <li>{s}</li>)}
             </ol>

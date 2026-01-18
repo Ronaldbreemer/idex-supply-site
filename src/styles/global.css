@@ -70,6 +70,13 @@ a:hover{ opacity:.95; }
   text-transform:uppercase;
   color: var(--muted2);
 }
+.section-title{
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
 
 h1,h2,h3{ margin:0; line-height:1.06; }
 h1{ font-size: clamp(2.2rem, 4vw, 3.6rem); letter-spacing:-0.02em; }
@@ -324,8 +331,10 @@ details.accordion,
 }
 .intake-link{
   display:inline-block;
-  margin-top: 10px;
-  font-size: .92rem;
+  margin-top: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
 }
 
 .statRow{
@@ -408,6 +417,10 @@ details.accordion summary{
   display:flex;
   align-items:center;
   gap: 6px;
+}
+details.accordion.faq-accordion summary{
+  font-weight: 700;
+  color: rgba(11,18,32,.78);
 }
 details.accordion summary::-webkit-details-marker{ display:none; }
 details.accordion p{ margin-top: 10px; color: rgba(11,18,32,.86); }

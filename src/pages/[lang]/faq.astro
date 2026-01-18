@@ -12,13 +12,12 @@ const c = t(lang);
   <section class="section">
     <div class="container">
       <div class="card">
-        <div class="kicker">{c.faq.kicker}</div>
         <h1 style="margin-top:10px;">{c.faq.title}</h1>
         <p style="margin-top:12px;">{c.faq.intro}</p>
 
         <div class="grid" style="margin-top:14px;">
           {c.faq.items.map((it) => (
-            <details class="accordion">
+            <details class="accordion faq-accordion">
               <summary>{it.q}</summary>
               <p>{it.a}</p>
             </details>

@@ -41,3 +41,37 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Deploy (Hetzner + PM2)
+
+Korte handleiding om de live versie te updaten via SSH.
+
+### Voorbereiden (lokaal)
+
+```sh
+git status
+git add -A
+git commit -m "Your message"
+git push
+```
+
+### Deploy (server)
+
+```sh
+ssh USER@SERVER_IP
+cd /pad/naar/project
+git pull
+npm ci
+npm run build
+pm2 restart ecosystem.config.js
+pm2 status
+pm2 logs --lines 100
+```
+
+### Zonder ecosystem file
+
+Als je geen `ecosystem.config.js` gebruikt, restart dan op app-naam:
+
+```sh
+pm2 restart jouw-app-naam
+```

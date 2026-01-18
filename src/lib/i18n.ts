@@ -64,7 +64,7 @@ export const copy = {
     home: {
       kicker: "INKOOP & VOORRAADBEHEER VOOR HET MKB",
       heroTitle: "Grip op voorraad en inkoop, zonder extra ruis.",
-      heroSub: "Stop met workarounds naast je systeem. Krijg realtime grip op voorraad en inkoop — passend bij je werkwijze.",
+      heroSub: "Stop met workarounds naast je systeem. Krijg realtime grip op voorraad en inkoop — passend bij jouw werkwijze",
       scanAlt: "Liever eerst een scan?",
       ctaSub: "Vrijblijvend - 15 min - binnen 1 werkdag reactie",
       pills: [
@@ -74,16 +74,16 @@ export const copy = {
       ],
       tooltipTitle: "Wat bedoelen we met open source & EU-hosting?",
       tooltipBody:
-        "Open-source stack + hosting in Duitsland (Hetzner) maakt de oplossing beter overdraagbaar en vermindert afhankelijkheid. Levering is inclusief documentatie en broncode (geen vendor lock-in).",
+        "Open source betekent: we bouwen met open technologie en je krijgt de broncode en documentatie mee. Zo zit je niet aan ons vast en kan iemand anders het ook overnemen. EU-hosting betekent: je data en software staan op servers in Europa. Standaard in Duitsland (Hetzner), maar het kan ook op een locatie die jij kiest.",
       problemCardTitle: "Van brandjes naar controle.",
       problemTitle: "Als voorraad niet klopt, wordt alles duur.",
       problemBody:
-        "Spoedorders, misgrijpen, stilstand - frustratie op de vloer. IDEX Supply brengt grip met simpele, robuuste modules en dashboards die je team snapt en gebruikt. Plan een intake (15 min): in een gesprek zie je waar het lekt en wat je als eerste aanpakt.",
+        "Spoedorders, misgrijpen, stilstand - frustratie op de vloer. IDEX Supply brengt grip met simpele, robuuste modules en dashboards die je team snapt en gebruikt. Plan een intake (15 min): samen kijken we wat er speelt en wat je het beste als eerste kunt aanpakken.",
       resultsCardTitle: "Meetbaar effect op KPI's.",
       demoKicker: "Demo",
-      demoTitle: "Zo ziet het er in de app uit.",
+      demoTitle: "KPI's, uitzonderingen en actielijsten.",
       demoLink: "Bekijk app demo",
-      demoBody: "Een app met KPI's, exceptions en actielijsten - zoals je team het dagelijks gebruikt.",
+      demoBody: "Afgestemd op het dagelijks werk van je team. Flexibel ingericht: we bouwen wat jij nodig hebt.",
       resultsTitle: "Wat het oplevert",
       results: [
         "Minder misgrijpen en spoed: leverbetrouwbaarheid omhoog",
@@ -93,7 +93,7 @@ export const copy = {
       forWhoTitle: "Voor wie is IDEX Supply?",
       forWhoHeading: "Gericht oplossen. Geen groot traject.",
       forWhoBody:
-        "Standaard ERP/WMS/voorraadmodules en low-code werken prima bij gemiddelde processen. IDEX Supply is er als je ondanks een systeem nog workarounds en losse stuurinformatie nodig hebt — en snel grip wil op voorraad, inkoop en leverbetrouwbaarheid.",
+        "Standaard ERP/WMS/voorraadmodules en low-code werken prima bij gemiddelde processen. IDEX Supply is bedoeld voor teams die dit herkennen: je hebt al een systeem, maar werkt toch met workarounds en losse stuurinformatie — en zoekt snelle grip op voorraad, inkoop en leverbetrouwbaarheid.",
       forWhoBullets: [
         "Uitzonderingen zijn ‘de norm’ (locaties, partijnummers, substitutes, afwijkende flows)",
         "Stuurinformatie op KPI’s: leverbetrouwbaarheid, backorders, leveranciersperformance",
@@ -265,7 +265,7 @@ export const copy = {
     contact: {
       kicker: "Contact",
       title: "Contact",
-      intro: "Intakes genereren voor Supply Scan en Supply Control - met nadruk op KPI's, marge en leverbetrouwbaarheid.",
+      intro: "Plan een kennismaking of stuur je vraag. We reageren snel (meestal binnen 1 werkdag).",
       company: "IDEX Supply",
       address: ["Jonagoldstraat 65", "6515 EN Nijmegen", "Nederland"],
       phoneLabel: "+31 (0)24 207 0032",
@@ -275,7 +275,7 @@ export const copy = {
       btw: "BTW: (vul in)",
       formTitle: "Stuur een bericht",
       formNote:
-        "Deze form gebruikt mailto (opent je mailprogramma). Wil je een echte server-form (Netlify/Vercel/Formspree), dan pas ik 'm direct aan.",
+        "Je bericht wordt veilig verstuurd naar info@idexsupply.nl.",
       intentScan: "Supply Scan",
       intentIntake: "Intake (15 min)",
       namePlaceholder: "Naam",
@@ -346,7 +346,6 @@ export const copy = {
 
   /* EN/IT: compact maar professioneel (optioneel). */
 
-
   en: {
     meta: {
       title: "IDEX Supply — Inventory & purchasing control, without extra noise",
@@ -370,8 +369,7 @@ export const copy = {
       languageSwitcherLabel: "Language switch",
     },
     footer: {
-      blurb:
-        "Inventory and purchasing control, without extra noise — with focused modules and dashboards that work on the shop floor.",
+      blurb: "Inventory and purchasing control, without extra noise — with focused modules and dashboards that work on the shop floor.",
     },
     cta: {
       scan: "Book the IDEX Supply Scan",
@@ -382,8 +380,7 @@ export const copy = {
     home: {
       kicker: "PURCHASING & INVENTORY MANAGEMENT FOR SMBs",
       heroTitle: "Inventory and purchasing control, without extra noise.",
-      heroSub:
-        "Stop using workarounds next to your system. Get real-time control of inventory and purchasing — aligned with how you work.",
+      heroSub: "Stop using workarounds next to your system. Get real-time control of inventory and purchasing — aligned with how you work",
       scanAlt: "Prefer a scan first?",
       ctaSub: "No obligation - 15 min - reply within 1 business day",
       pills: [
@@ -393,18 +390,17 @@ export const copy = {
       ],
       tooltipTitle: "What do we mean by open source & EU hosting?",
       tooltipBody:
-        "An open-source stack + hosting in Germany (Hetzner) makes the solution more transferable and reduces dependency. Delivery includes documentation and source code (no vendor lock-in).",
+        "Open source means: we build with open technology and you receive the source code and documentation. That way you’re not tied to us and someone else can take it over. EU hosting means: your data and software run on servers in Europe. By default in Germany (Hetzner), but it can also be in a location you choose.",
       problemCardTitle: "From firefighting to control.",
       problemTitle: "When inventory is off, everything gets expensive.",
       problemBody:
-        "Rush orders, stock-outs, downtime — frustration on the shop floor. IDEX Supply brings control with simple, robust modules and dashboards your team understands and actually uses. Schedule an intake (15 min): in one conversation you’ll see where it leaks and what to tackle first.",
+        "Rush orders, stock-outs, downtime — frustration on the shop floor. IDEX Supply brings control with simple, robust modules and dashboards your team understands and uses. Schedule an intake (15 min): together we look at what’s going on and what you should tackle first.",
       resultsCardTitle: "Measurable impact on KPIs.",
       demoKicker: "Demo",
-      demoTitle: "What it looks like in the app.",
+      demoTitle: "KPIs, exceptions and action lists.",
       demoLink: "View app demo",
-      demoBody:
-        "An app with KPIs, exceptions and action lists — the way your team uses it every day.",
-      resultsTitle: "What you get out of it",
+      demoBody: "Aligned with your team's day-to-day work. Flexibly configured: we build what you need.",
+      resultsTitle: "What it delivers",
       results: [
         "Fewer stock-outs and rush orders: higher delivery reliability",
         "Better purchasing decisions: signals based on data and agreements",
@@ -413,7 +409,7 @@ export const copy = {
       forWhoTitle: "Who is IDEX Supply for?",
       forWhoHeading: "Solve it with focus. No big project.",
       forWhoBody:
-        "Standard ERP/WMS/inventory modules and low-code work fine for average processes. IDEX Supply is for when, despite having a system, you still need workarounds and separate steering information — and you want fast control of inventory, purchasing and delivery reliability.",
+        "Standard ERP/WMS/inventory modules and low-code work fine for average processes. IDEX Supply is meant for teams who recognize this: you already have a system, but you still use workarounds and separate steering information — and you want quick control of inventory, purchasing and delivery reliability.",
       forWhoBullets: [
         "Exceptions are ‘the norm’ (locations, batch numbers, substitutes, non-standard flows)",
         "Steering information on KPIs: delivery reliability, backorders, supplier performance",
@@ -424,30 +420,15 @@ export const copy = {
       offerHeading: "Choose your entry point.",
       intakeNudge: "Want to talk it through first? Schedule an intake",
       offer: [
-        {
-          t: "IDEX Supply Scan",
-          d: "Inventory/purchasing review + KPI-driven improvement plan and roadmap.",
-          meta: "1–2 weeks — € 1.250",
-        },
-        {
-          t: "IDEX Supply Control",
-          d: "Automate one core process (e.g. replenishment or inventory adjustments). Fixed scope/fixed price; optional expansion.",
-          meta: "4–6 weeks — € 5.000",
-        },
-        {
-          t: "IDEX Supply Suite",
-          d: "Multiple modules + dashboards + roles. Fixed scope/fixed price; optional expansion.",
-          meta: "8–12 weeks — € 12.000",
-        },
+        { t: "IDEX Supply Scan", d: "Inventory/purchasing review + KPI-driven improvement plan and roadmap.", meta: "1–2 weeks — € 1.250" },
+        { t: "IDEX Supply Control", d: "Automate one core process (e.g. replenishment or inventory adjustments). Fixed scope/fixed price; optional expansion.", meta: "4–6 weeks — € 5.000" },
+        { t: "IDEX Supply Suite", d: "Multiple modules + dashboards + roles. Fixed scope/fixed price; optional expansion.", meta: "8–12 weeks — € 12.000" },
       ],
       approachTitle: "Approach in 6 steps",
       approachHeading: "Predictable delivery. Weekly demos.",
       steps: [
         ["Intake & data exploration", "Clarify goals, bottlenecks and data flows."],
-        [
-          "Scan (process + data + KPIs)",
-          "Where are you losing margin or delivery reliability — and why: what is the root cause and where in the process does it go wrong?",
-        ],
+        ["Scan (process + data + KPIs)", "Where are you losing margin or delivery reliability — and why: what is the root cause and where in the process does it go wrong?"],
         ["Scope & acceptance criteria", "Fixed deliverables, measurable and testable."],
         ["Build + weekly demos", "Short feedback loop, visible results."],
         ["Testing + guided go-live", "Real scenarios, exceptions included."],
@@ -458,8 +439,7 @@ export const copy = {
         "For business software, continuity is essential. Support can be arranged with clear response times; changes are quoted upfront.",
       tipKicker: "Tip",
       tipTitle: "Start with data + KPIs.",
-      tipBody:
-        "The scan delivers a concrete improvement plan and roadmap. After that, we build exactly what has impact.",
+      tipBody: "The scan delivers a concrete improvement plan and roadmap. After that, we build exactly what has impact.",
       bottomCtaTitle: "Determine the most promising first step right away.",
       bottomCtaBody:
         "Schedule a short introduction (15 min) and we’ll immediately determine whether a scan, control or suite will have the most impact.",
@@ -470,15 +450,9 @@ export const copy = {
       intro:
         "Inventory and purchasing control — with software that works on the shop floor. No big ERP project, but solving one bottleneck for real and then expanding in a controlled way.",
       bullets: [
-        [
-          "Process and data first",
-          "We set up a core workflow tightly (e.g. reorder levels → automatically generate purchase orders → order monitoring → receiving → inventory → issuing) and measure the effect on KPIs.",
-        ],
+        ["Process and data first", "We set up a core workflow tightly (e.g. reorder levels → automatically generate purchase orders → order monitoring → receiving → inventory → issuing) and measure the effect on KPIs."],
         ["Predictable", "Fixed scope/fixed price, milestones and acceptance criteria upfront."],
-        [
-          "Changes without hassle",
-          "New wishes via change requests — priced and scheduled separately.",
-        ],
+        ["Changes without hassle", "New wishes via change requests — priced and scheduled separately."],
         ["Transferable", "Documentation, source code and handover are included by default (no lock-in)."],
         ["Continuity (optional)", "On-demand development, with clear agreements."],
       ],
@@ -512,7 +486,7 @@ export const copy = {
       table: [
         ["Start", "Broad package, often lots of configuration", "Start small with 1 core process"],
         ["Exceptions", "Workarounds (Excel, email, ‘this is how we do it’)", "Exceptions explicitly supported"],
-        ["Insight", "Reporting takes time or is generic", "KPI dashboards on your steering information"],
+        ["Insight", "Reporting takes time or is generic", "KPI dashboards based on your steering information"],
         ["Integrations", "Custom work becomes expensive/slow", "Targeted integration where it adds value"],
         ["Changes", "Ticketing/lead time/dependency", "Change requests: priced and planned"],
         ["Ownership", "Lock-in risk", "Transferable (docs + source code + handover)"],
@@ -548,8 +522,7 @@ export const copy = {
         "Not sure whether you have a system problem or a process problem? Schedule a short introduction. In 15 minutes we can often already determine whether small adjustments get you moving, or whether focused software makes the difference.",
       ctaKicker: "KPIs first",
       ctaTitle: "Start with a scan, then build exactly what has impact.",
-      ctaBody:
-        "In 1–2 weeks you’ll have a concrete improvement plan and roadmap. Then we deliver a first workable module — fixed scope / fixed price.",
+      ctaBody: "In 1–2 weeks you’ll have a concrete improvement plan and roadmap. Then we deliver a first workable module — fixed scope / fixed price.",
     },
     faq: {
       kicker: "FAQ",
@@ -558,58 +531,58 @@ export const copy = {
       items: [
         {
           q: "Can you integrate with our current ERP/WMS?",
-          a: "Yes, where it makes sense. We only integrate if it truly adds value. In the intake we determine which data comes from ERP/WMS, what must be written back, and what can remain separate to keep it manageable.",
+          a: "Yes, where it makes sense. We only integrate if it truly adds value. In the intake we determine which data comes from ERP/WMS, what must be written back, and what can remain separate to keep it manageable."
         },
         {
           q: "How do you ensure this works on the shop floor?",
-          a: "We build around the shop-floor process, test with real scenarios and deliver in short iterations with demos. Critical flows (adjustments, exceptions, batch numbers, substitutes) get explicit attention.",
+          a: "We build around the shop-floor process, test with real scenarios and deliver in short iterations with demos. Critical flows (adjustments, exceptions, batch numbers, substitutes) get explicit attention."
         },
         {
           q: "How long does it take and how do we keep it small?",
-          a: "Indicative: Scan 1–2 weeks, Control 4–6 weeks, Suite 8–12 weeks. We work fixed scope/fixed price with acceptance criteria. New wishes go via change requests: priced and scheduled separately.",
+          a: "Indicative: Scan 1–2 weeks, Control 4–6 weeks, Suite 8–12 weeks. We work fixed scope/fixed price with acceptance criteria. New wishes go via change requests: priced and scheduled separately."
         },
         {
           q: "Who manages hosting and backups?",
-          a: "We agree this upfront. It can be handled by your IT/partner, or optionally via IDEX with agreements on retention, monitoring, access and responsibilities.",
+          a: "We agree this upfront. It can be handled by your IT/partner, or optionally via IDEX with agreements on retention, monitoring, access and responsibilities."
         },
         {
           q: "Where is my data?",
-          a: "We fix this upfront (location, access, management). Hosting can be in the EU, for example Germany (Hetzner), with a secured database. We deliver in a transferable way (documentation + source code).",
+          a: "We fix this upfront (location, access, management). Hosting can be in the EU, for example Germany (Hetzner), with a secured database. We deliver in a transferable way (documentation + source code)."
         },
         {
           q: "What if the developer is unavailable?",
-          a: "We safeguard continuity through transferability: documentation, repository structure, a handover moment, reproducible builds and clear access to hosting/accounts. Extra capacity only in consultation.",
+          a: "We safeguard continuity through transferability: documentation, repository structure, a handover moment, reproducible builds and clear access to hosting/accounts. Extra capacity only in consultation."
         },
         {
           q: "Why not solve everything in the ERP/WMS?",
-          a: "Sometimes you can, but exceptions and steering information often do not fit well in standard modules. IDEX Supply tackles exactly the bottlenecks — focused, without a big project.",
+          a: "Sometimes you can, but exceptions and steering information often do not fit well in standard modules. IDEX Supply tackles exactly the bottlenecks — focused, without a big project."
         },
         {
           q: "When is standard software the best choice?",
-          a: "When processes are relatively standard, exceptions are rare, you’re okay with standard reporting and with the lead time of changes.",
+          a: "When processes are relatively standard, exceptions are rare, you’re okay with standard reporting and with the lead time of changes."
         },
         {
           q: "When is IDEX Supply logical?",
-          a: "When you want to truly solve one bottleneck, reduce manual work and increase shop-floor reliability, want KPI dashboards that fit, and want transferability without platform/vendor dependency.",
+          a: "When you want to truly solve one bottleneck, reduce manual work and increase shop-floor reliability, want KPI dashboards that fit, and want transferability without platform/vendor dependency."
         },
         {
           q: "And low-code?",
-          a: "Low-code/no-code can be great for standard processes or quick internal tools. IDEX Supply is for when exceptions, integrations, performance or transferability weigh heavier — and you want less lock-in.",
+          a: "Low-code/no-code can be great for standard processes or quick internal tools. IDEX Supply is for when exceptions, integrations, performance or transferability weigh heavier — and you want less lock-in."
         },
         {
           q: "How does transferability and ongoing development work?",
-          a: "You receive delivery with documentation, source code and handover. Ongoing development can be on-demand: changes/expansions are quoted upfront and scheduled as needed.",
+          a: "You receive delivery with documentation, source code and handover. Ongoing development can be on-demand: changes/expansions are quoted upfront and scheduled as needed."
         },
         {
           q: "Pause or cancel?",
-          a: "Always possible: completed work is finished and invoiced; not-started work is cancelled; source code and documentation can be handed over.",
+          a: "Always possible: completed work is finished and invoiced; not-started work is cancelled; source code and documentation can be handed over."
         },
       ],
     },
     contact: {
       kicker: "Contact",
       title: "Contact",
-      intro: "Generate intakes for Supply Scan and Supply Control — with emphasis on KPIs, margin and delivery reliability.",
+      intro: "Schedule an introduction or send your question. We respond quickly (usually within 1 business day).",
       company: "IDEX Supply",
       address: ["Jonagoldstraat 65", "6515 EN Nijmegen", "Netherlands"],
       phoneLabel: "+31 (0)24 207 0032",
@@ -618,8 +591,7 @@ export const copy = {
       kvk: "Chamber of Commerce no.: (fill in)",
       btw: "VAT: (fill in)",
       formTitle: "Send a message",
-      formNote:
-        "This form uses mailto (opens your email client). If you want a real server form (Netlify/Vercel/Formspree), I’ll adjust it immediately.",
+      formNote: "Your message will be sent securely to info@idexsupply.nl.",
       intentScan: "Supply Scan",
       intentIntake: "Intake (15 min)",
       namePlaceholder: "Name",
@@ -631,8 +603,7 @@ export const copy = {
     },
     app: {
       title: "App demo (logged in)",
-      intro:
-        "Example of the look & feel of a supply control dashboard: KPIs, exceptions and action lists.",
+      intro: "Example of the look & feel of a supply control dashboard: KPIs, exceptions and action lists."
     },
     appDemo: {
       crumb: "Supply >",
@@ -647,9 +618,9 @@ export const copy = {
         { k: "suppliers", label: "Supplier performance" },
         { k: "exceptions", label: "Exceptions & backorders" },
       ],
-      serviceTitle: "See where inventory and delivery reliability are leaking",
+      serviceTitle: "See where inventory and delivery reliability are slipping",
       serviceBody:
-        "Supply Control brings data, KPIs and exceptions together in one screen. Your team immediately sees what needs action: stock-outs, deviating lead times, unexplained adjustments and backorders.",
+        "Supply Control brings data, KPIs and exceptions together in one screen. Your team immediately sees what needs action: stock-outs, unusual lead times, unexplained adjustments and backorders.",
       launch: "Open Control Dashboard",
       learn: "More about KPIs and approach ->",
       sec1: "Dashboards & steering information",
@@ -686,13 +657,13 @@ export const copy = {
       sidebarLinkIntake: "Schedule intake",
       diagramLabel1: "Replenishment signals",
       diagramLabel2: "Supplier performance alerts",
-    },
+    }
   },
 
   it: {
     meta: {
       title: "IDEX Supply — Controllo di scorte e acquisti, senza rumore extra",
-      desc: "Web app supply chain mirate: KPI, margine e affidabilità di consegna. Parti con una Supply Scan e migliora con custom controllato.",
+      desc: "Web app supply chain mirate: KPI, margine e affidabilità di consegna. Parti con una Supply Scan e migliora con sviluppo su misura controllato.",
     },
     nav: {
       home: "Home",
@@ -712,8 +683,7 @@ export const copy = {
       languageSwitcherLabel: "Cambio lingua",
     },
     footer: {
-      blurb:
-        "Controllo di scorte e acquisti, senza rumore extra — con moduli e dashboard mirati che funzionano sul campo.",
+      blurb: "Controllo di scorte e acquisti, senza rumore extra — con moduli e dashboard mirati che funzionano sul campo.",
     },
     cta: {
       scan: "Prenota la IDEX Supply Scan",
@@ -724,8 +694,7 @@ export const copy = {
     home: {
       kicker: "ACQUISTI & GESTIONE SCORTE PER PMI",
       heroTitle: "Controllo di scorte e acquisti, senza rumore extra.",
-      heroSub:
-        "Basta workaround accanto al tuo sistema. Ottieni controllo in tempo reale su scorte e acquisti — in linea con il tuo modo di lavorare.",
+      heroSub: "Basta workaround accanto al tuo sistema. Ottieni controllo in tempo reale su scorte e acquisti — in linea con il tuo modo di lavorare",
       scanAlt: "Preferisci prima una scan?",
       ctaSub: "Senza impegno - 15 min - risposta entro 1 giorno lavorativo",
       pills: [
@@ -735,17 +704,16 @@ export const copy = {
       ],
       tooltipTitle: "Cosa intendiamo per open source & hosting UE?",
       tooltipBody:
-        "Stack open-source + hosting in Germania (Hetzner) rendono la soluzione più trasferibile e riducono la dipendenza. La consegna include documentazione e codice sorgente (nessun vendor lock-in).",
+        "Open source significa: costruiamo con tecnologia open e ricevi il codice sorgente e la documentazione. Così non sei legato a noi e un’altra parte può subentrare. Hosting UE significa: i tuoi dati e il software sono su server in Europa. Di default in Germania (Hetzner), ma può anche essere nella sede che scegli tu.",
       problemCardTitle: "Dalle emergenze al controllo.",
       problemTitle: "Se le scorte non tornano, tutto diventa più caro.",
       problemBody:
-        "Ordini urgenti, mancanze, fermo macchina — frustrazione sul campo. IDEX Supply porta controllo con moduli e dashboard semplici e robusti che il team capisce e usa. Pianifica un intake (15 min): in una call vedi dove perde e cosa affrontare per primo.",
+        "Ordini urgenti, mancanze, fermo macchina — frustrazione sul campo. IDEX Supply porta controllo con moduli e dashboard semplici e robusti che il team capisce e usa. Pianifica un intake (15 min): insieme vediamo cosa sta succedendo e cosa conviene affrontare per primo.",
       resultsCardTitle: "Impatto misurabile sui KPI.",
       demoKicker: "Demo",
-      demoTitle: "Così appare nell'app.",
+      demoTitle: "KPI, eccezioni e liste azioni.",
       demoLink: "Guarda la demo app",
-      demoBody:
-        "Un’app con KPI, eccezioni e liste azioni — come il team la usa ogni giorno.",
+      demoBody: "Allineato al lavoro quotidiano del tuo team. Configurazione flessibile: costruiamo ciò di cui hai bisogno.",
       resultsTitle: "Cosa ottieni",
       results: [
         "Meno mancanze e urgenze: affidabilità di consegna in aumento",
@@ -755,7 +723,7 @@ export const copy = {
       forWhoTitle: "Per chi è IDEX Supply?",
       forWhoHeading: "Soluzione mirata. Nessun grande progetto.",
       forWhoBody:
-        "ERP/WMS/moduli scorte standard e low-code vanno bene con processi medi. IDEX Supply è per quando, nonostante un sistema, servono ancora workaround e informazioni di controllo separate — e vuoi rapidamente controllo su scorte, acquisti e affidabilità di consegna.",
+        "ERP/WMS/moduli scorte standard e low-code vanno bene con processi medi. IDEX Supply è pensato per i team che riconoscono questo: hai già un sistema, ma lavori comunque con workaround e informazioni di controllo separate — e vuoi rapidamente controllo su scorte, acquisti e affidabilità di consegna.",
       forWhoBullets: [
         "Le eccezioni sono “la norma” (sedi, lotti, sostituti, flussi non standard)",
         "Informazioni di controllo sui KPI: affidabilità, backorder, performance fornitori",
@@ -766,30 +734,15 @@ export const copy = {
       offerHeading: "Scegli il tuo ingresso.",
       intakeNudge: "Vuoi confrontarti prima? Pianifica un intake",
       offer: [
-        {
-          t: "IDEX Supply Scan",
-          d: "Analisi scorte/acquisti + piano di miglioramento e roadmap guidati dai KPI.",
-          meta: "1–2 settimane — € 1.250",
-        },
-        {
-          t: "IDEX Supply Control",
-          d: "Automatizzare un processo core (es. replenishment o correzioni scorte). Scope fisso/prezzo fisso; estensioni opzionali.",
-          meta: "4–6 settimane — € 5.000",
-        },
-        {
-          t: "IDEX Supply Suite",
-          d: "Più moduli + dashboard + ruoli. Scope fisso/prezzo fisso; estensioni opzionali.",
-          meta: "8–12 settimane — € 12.000",
-        },
+        { t: "IDEX Supply Scan", d: "Analisi scorte/acquisti + piano di miglioramento e roadmap guidati dai KPI.", meta: "1–2 settimane — € 1.250" },
+        { t: "IDEX Supply Control", d: "Automatizzare un processo core (es. replenishment o correzioni scorte). Scope fisso/prezzo fisso; estensioni opzionali.", meta: "4–6 settimane — € 5.000" },
+        { t: "IDEX Supply Suite", d: "Più moduli + dashboard + ruoli. Scope fisso/prezzo fisso; estensioni opzionali.", meta: "8–12 settimane — € 12.000" },
       ],
       approachTitle: "Approccio in 6 passi",
       approachHeading: "Consegna prevedibile. Demo settimanali.",
       steps: [
         ["Intake & esplorazione dati", "Chiarire obiettivi, colli di bottiglia e flussi dati."],
-        [
-          "Scan (processo + dati + KPI)",
-          "Dove perdi margine o affidabilità di consegna — e perché: qual è la causa radice e dove nel processo va storto?",
-        ],
+        ["Scan (processo + dati + KPI)", "Dove perdi margine o affidabilità di consegna — e perché: qual è la causa radice e dove nel processo va storto?"],
         ["Scope & criteri di accettazione", "Deliverable fissi, misurabili e testabili."],
         ["Sviluppo + demo settimanali", "Feedback rapido, risultato visibile."],
         ["Test + go-live guidato", "Scenari reali, eccezioni incluse."],
@@ -800,8 +753,7 @@ export const copy = {
         "Per il software aziendale la continuità è essenziale. Il supporto può essere definito con tempi di risposta chiari; le modifiche vengono preventivate in anticipo.",
       tipKicker: "Tip",
       tipTitle: "Inizia da dati + KPI.",
-      tipBody:
-        "La scan produce un piano di miglioramento e una roadmap concreti. Poi costruiamo esattamente ciò che ha impatto.",
+      tipBody: "La scan produce un piano di miglioramento e una roadmap concreti. Poi costruiamo esattamente ciò che ha impatto.",
       bottomCtaTitle: "Determina subito il primo passo più promettente.",
       bottomCtaBody:
         "Pianifica una breve conoscenza (15 min) e decidiamo subito se scan, control o suite è ciò che ha più impatto.",
@@ -812,15 +764,9 @@ export const copy = {
       intro:
         "Controllo di scorte e acquisti — con software che funziona sul campo. Nessun grande progetto ERP, ma risolvere davvero un collo di bottiglia e poi estendere in modo controllato.",
       bullets: [
-        [
-          "Processo e dati al centro",
-          "Impostiamo un workflow core in modo rigoroso (es. livelli di riordino → generazione automatica ordini → monitoraggio ordini → ricezione → scorte → prelievo) e misuriamo l’effetto sui KPI.",
-        ],
+        ["Processo e dati al centro", "Impostiamo un workflow chiave in modo rigoroso (es. livelli di riordino → generazione automatica ordini → monitoraggio ordini → ricezione → scorte → prelievo) e misuriamo l’effetto sui KPI."],
         ["Prevedibile", "Scope fisso/prezzo fisso, milestone e criteri di accettazione definiti prima."],
-        [
-          "Modifiche senza complicazioni",
-          "Nuove richieste tramite change request — preventivate e pianificate separatamente.",
-        ],
+        ["Modifiche senza complicazioni", "Nuove richieste tramite change request — preventivate e pianificate separatamente."],
         ["Trasferibile", "Documentazione, codice sorgente e handover inclusi di default (niente lock-in)."],
         ["Continuità (opzionale)", "Evoluzioni on-demand, con accordi chiari."],
       ],
@@ -829,8 +775,7 @@ export const copy = {
         "Lavori con un unico specialista dedicato: comunicazione diretta, velocità e responsabilità. Il passaggio di consegne è garantito tramite documentazione, struttura repository, build riproducibili e accordi sugli accessi a hosting/account. In situazioni critiche si può attivare capacità extra (solo con approvazione).",
       practicalKicker: "Pratico",
       practicalTitle: "Lo scope resta gestibile.",
-      practicalBody:
-        "Nuove richieste sono sempre possibili — tramite change request: preventivate e pianificate separatamente.",
+      practicalBody: "Nuove richieste sono sempre possibili — tramite change request: preventivate e pianificate separatamente.",
       ctaKicker: "Parti in piccolo, misura l’impatto",
       ctaTitle: "Inizia con la IDEX Supply Scan.",
       ctaBody: "Ricevi in 1–2 settimane un piano e una roadmap guidati dai KPI.",
@@ -849,14 +794,14 @@ export const copy = {
       ],
       lowcodeTitle: "Il low-code sembra veloce… finché contano eccezioni e integrazioni.",
       lowcodeBody:
-        "Nei processi supply/material, le eccezioni spesso sono la norma e vuoi gestire via KPI (service level, out-of-stock, affidabilità di consegna). Per questo IDEX Supply sceglie custom solido: workflow core impostato in modo rigoroso, scope chiaro e dashboard realmente usate.",
+        "Nei processi supply/material, le eccezioni spesso sono la norma e vuoi gestire via KPI (service level, out-of-stock, affidabilità di consegna). Per questo IDEX Supply sceglie uno sviluppo su misura solido: workflow chiave impostato in modo rigoroso, scope chiaro e dashboard realmente usate.",
       tableTitle: "Confronto (breve)",
       tableHeadings: ["Voce", "Standard / low-code", "IDEX Supply"],
       table: [
         ["Start", "Pacchetto ampio, spesso molta configurazione", "Parti in piccolo con 1 processo core"],
         ["Eccezioni", "Workaround (Excel, email, “si fa così”)", "Eccezioni supportate esplicitamente"],
-        ["Insight", "Report richiedono tempo o sono generici", "Dashboard KPI sulla tua steering information"],
-        ["Integrazioni", "Il custom diventa costoso/lento", "Integrazione mirata dove aggiunge valore"],
+        ["Insight", "Report richiedono tempo o sono generici", "Dashboard KPI sulle tue informazioni di controllo"],
+        ["Integrazioni", "Il lavoro su misura diventa costoso/lento", "Integrazione mirata dove aggiunge valore"],
         ["Modifiche", "Ticketing/tempi/dipendenza", "Change request: preventivate e pianificate"],
         ["Ownership", "Rischio lock-in", "Trasferibile (doc + codice + handover)"],
       ],
@@ -869,10 +814,10 @@ export const copy = {
       title: "Approccio",
       kicker: "Approccio",
       intro:
-        "IDEX Supply (custom, ma controllato): quando vuoi rapidamente controllo su un problema core nel tuo processo supply/material.",
+        "IDEX Supply (su misura, ma controllato): quando vuoi rapidamente controllo su un problema chiave nel tuo processo supply/material.",
       youGetTitle: "Cosa ottieni",
       youGet: [
-        "Una prima versione utilizzabile attorno a un workflow core (es. ricezione → scorte → prelievo, oppure acquisti → pianificazione consegne → backorder)",
+        "Una prima versione utilizzabile attorno a un workflow chiave (es. ricezione → scorte → prelievo, oppure acquisti → pianificazione consegne → backorder)",
         "Processo e dati al centro: meno lavoro manuale, meno deviazioni",
         "Dashboard/panoramiche allineate ai tuoi KPI (mirate, non “tutto”)",
         "Trasferibile: documentazione + codice sorgente + handover (nessun vendor lock-in)",
@@ -891,8 +836,7 @@ export const copy = {
         "Non sai se hai un problema di sistema o di processo? Pianifica una breve conoscenza. In 15 minuti spesso possiamo già capire se bastano piccole modifiche o se il software mirato fa la differenza.",
       ctaKicker: "Prima i KPI",
       ctaTitle: "Inizia con una scan, poi costruiamo esattamente ciò che ha impatto.",
-      ctaBody:
-        "In 1–2 settimane hai un piano di miglioramento e una roadmap concreti. Poi consegniamo un primo modulo funzionante — scope fisso / prezzo fisso.",
+      ctaBody: "In 1–2 settimane hai un piano di miglioramento e una roadmap concreti. Poi consegniamo un primo modulo funzionante — scope fisso / prezzo fisso.",
     },
     faq: {
       kicker: "FAQ",
@@ -901,58 +845,58 @@ export const copy = {
       items: [
         {
           q: "Potete integrarvi con il nostro ERP/WMS attuale?",
-          a: "Sì, dove ha senso. Integriamo solo se aggiunge davvero valore. Nell’intake definiamo quali dati arrivano da ERP/WMS, cosa va riscritto indietro e cosa può restare separato per mantenere tutto gestibile.",
+          a: "Sì, dove ha senso. Integriamo solo se aggiunge davvero valore. Nell’intake definiamo quali dati arrivano da ERP/WMS, cosa va riscritto indietro e cosa può restare separato per mantenere tutto gestibile."
         },
         {
           q: "Come garantite che funzioni sul campo?",
-          a: "Costruiamo attorno al processo sul campo, testiamo con scenari reali e consegniamo in iterazioni brevi con demo. I flussi critici (correzioni, eccezioni, lotti, sostituti) ricevono attenzione esplicita.",
+          a: "Costruiamo attorno al processo sul campo, testiamo con scenari reali e consegniamo in iterazioni brevi con demo. I flussi critici (correzioni, eccezioni, lotti, sostituti) ricevono attenzione esplicita."
         },
         {
           q: "Quanto dura e come lo teniamo piccolo?",
-          a: "Indicativamente: Scan 1–2 settimane, Control 4–6 settimane, Suite 8–12 settimane. Lavoriamo scope fisso/prezzo fisso con criteri di accettazione. Le nuove richieste passano via change request: preventivate e pianificate separatamente.",
+          a: "Indicativamente: Scan 1–2 settimane, Control 4–6 settimane, Suite 8–12 settimane. Lavoriamo scope fisso/prezzo fisso con criteri di accettazione. Le nuove richieste passano via change request: preventivate e pianificate separatamente."
         },
         {
           q: "Chi gestisce hosting e backup?",
-          a: "Lo definiamo prima. Può restare al vostro IT/partner, oppure (opzionalmente) tramite IDEX con accordi chiari su retention, monitoraggio, accessi e responsabilità.",
+          a: "Lo definiamo prima. Può restare al vostro IT/partner, oppure (opzionalmente) tramite IDEX con accordi chiari su retention, monitoraggio, accessi e responsabilità."
         },
         {
           q: "Dove sono i miei dati?",
-          a: "Lo definiamo prima (posizione, accesso, gestione). L’hosting può essere in UE, ad esempio in Germania (Hetzner), con database protetto. Consegniamo in modo trasferibile (documentazione + codice sorgente).",
+          a: "Lo definiamo prima (posizione, accesso, gestione). L’hosting può essere in UE, ad esempio in Germania (Hetzner), con database protetto. Consegniamo in modo trasferibile (documentazione + codice sorgente)."
         },
         {
           q: "E se lo sviluppatore non è disponibile?",
-          a: "Garantiamo continuità tramite trasferibilità: documentazione, struttura repository, momento di handover, build riproducibili e accessi chiari a hosting/account. Capacità extra solo previo accordo.",
+          a: "Garantiamo continuità tramite trasferibilità: documentazione, struttura repository, momento di handover, build riproducibili e accessi chiari a hosting/account. Capacità extra solo previo accordo."
         },
         {
           q: "Perché non risolvere tutto in ERP/WMS?",
-          a: "A volte è possibile, ma eccezioni e informazioni di controllo spesso non si adattano bene ai moduli standard. IDEX Supply risolve esattamente i colli di bottiglia — in modo mirato, senza un grande progetto.",
+          a: "A volte è possibile, ma eccezioni e informazioni di controllo spesso non si adattano bene ai moduli standard. IDEX Supply risolve esattamente i colli di bottiglia — in modo mirato, senza un grande progetto."
         },
         {
           q: "Quando il software standard è la scelta migliore?",
-          a: "Se i processi sono relativamente standard, le eccezioni rare, sei ok con reportistica standard e con i tempi più lunghi per le modifiche.",
+          a: "Se i processi sono relativamente standard, le eccezioni rare, sei ok con reportistica standard e con i tempi più lunghi per le modifiche."
         },
         {
           q: "Quando IDEX Supply è sensato?",
-          a: "Se vuoi risolvere davvero un collo di bottiglia, ridurre il lavoro manuale e aumentare l’affidabilità sul campo, vuoi dashboard KPI che calzano, e vuoi trasferibilità senza dipendenze da piattaforma/fornitore.",
+          a: "Se vuoi risolvere davvero un collo di bottiglia, ridurre il lavoro manuale e aumentare l’affidabilità sul campo, vuoi dashboard KPI che calzano, e vuoi trasferibilità senza dipendenze da piattaforma/fornitore."
         },
         {
           q: "E il low-code?",
-          a: "Low-code/no-code può andare benissimo per processi standard o tool interni rapidi. IDEX Supply è per quando eccezioni, integrazioni, performance o trasferibilità pesano di più — e vuoi meno lock-in.",
+          a: "Low-code/no-code può andare benissimo per processi standard o tool interni rapidi. IDEX Supply è per quando eccezioni, integrazioni, performance o trasferibilità pesano di più — e vuoi meno lock-in."
         },
         {
           q: "Come funziona trasferibilità e sviluppo continuo?",
-          a: "Ricevi consegna con documentazione, codice sorgente e handover. Lo sviluppo continuo può essere on-demand: modifiche/estensioni preventivate prima e pianificate quando serve.",
+          a: "Ricevi consegna con documentazione, codice sorgente e handover. Lo sviluppo continuo può essere on-demand: modifiche/estensioni preventivate prima e pianificate quando serve."
         },
         {
           q: "Pausa o annullamento?",
-          a: "Sempre possibile: il lavoro svolto viene completato e fatturato; il lavoro non iniziato viene annullato; codice e documentazione possono essere consegnati.",
+          a: "Sempre possibile: il lavoro svolto viene completato e fatturato; il lavoro non iniziato viene annullato; codice e documentazione possono essere consegnati."
         },
       ],
     },
     contact: {
       kicker: "Contatto",
       title: "Contatto",
-      intro: "Generare intake per Supply Scan e Supply Control — con focus su KPI, margine e affidabilità di consegna.",
+      intro: "Pianifica una conoscenza o inviaci la tua domanda. Rispondiamo rapidamente (di solito entro 1 giorno lavorativo).",
       company: "IDEX Supply",
       address: ["Jonagoldstraat 65", "6515 EN Nijmegen", "Paesi Bassi"],
       phoneLabel: "+31 (0)24 207 0032",
@@ -961,8 +905,7 @@ export const copy = {
       kvk: "Registro imprese: (compila)",
       btw: "IVA: (compila)",
       formTitle: "Invia un messaggio",
-      formNote:
-        "Questo form usa mailto (apre il tuo client email). Se vuoi un form server (Netlify/Vercel/Formspree), lo adatto subito.",
+      formNote: "Il tuo messaggio viene inviato in modo sicuro a info@idexsupply.nl.",
       intentScan: "Supply Scan",
       intentIntake: "Intake (15 min)",
       namePlaceholder: "Nome",
@@ -974,8 +917,7 @@ export const copy = {
     },
     app: {
       title: "Demo app (accesso effettuato)",
-      intro:
-        "Esempio di look & feel di una dashboard supply control: KPI, eccezioni e liste azioni.",
+      intro: "Esempio di look & feel di una dashboard supply control: KPI, eccezioni e liste azioni."
     },
     appDemo: {
       crumb: "Supply >",
@@ -990,7 +932,7 @@ export const copy = {
         { k: "suppliers", label: "Performance fornitori" },
         { k: "exceptions", label: "Eccezioni & backorder" },
       ],
-      serviceTitle: "Vedi dove scorte e affidabilità di consegna “perdono”",
+      serviceTitle: "Vedi dove scorte e affidabilità di consegna stanno cedendo",
       serviceBody:
         "Supply Control riunisce dati, KPI ed eccezioni in un’unica schermata. Il team vede subito cosa richiede azione: mancanze, lead time fuori standard, correzioni non spiegate e backorder.",
       launch: "Apri Control Dashboard",
@@ -1031,9 +973,6 @@ export const copy = {
       diagramLabel2: "Supplier performance alerts",
     },
   },
-
-
-
 
 } as const;
 

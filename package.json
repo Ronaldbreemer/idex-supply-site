@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.0.0",
-    "astro": "^5.16.9",
-    "nodemailer": "^6.9.8"
+    "astro": "^5.16.11",
+    "nodemailer": "^7.0.12"
   },
   "devDependencies": {
-    "@types/nodemailer": "^6.4.14"
+    "@types/nodemailer": "^7.0.5"
+  },
+  "overrides": {
+    "h3": "^1.15.5"
   }
 }
