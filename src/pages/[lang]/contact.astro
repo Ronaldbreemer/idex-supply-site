@@ -18,7 +18,6 @@ const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
   <section class="section">
     <div class="container">
       <div class="card">
-        <div class="kicker">{c.contact.kicker}</div>
         <h1 style="margin-top:10px;">{c.contact.title}</h1>
         <p style="margin-top:12px;">{c.contact.intro}</p>
         {sent ? <p class="badge" style="margin-top:12px;">{c.contact.successMessage}</p> : null}
@@ -42,7 +41,7 @@ const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
             </p>
           </div>
 
-          <div class="card flat">
+          <div class="card flat" style="margin-top:-6px;">
             <h3>{c.contact.formTitle}</h3>
             <p style="margin-top:8px; color: rgba(11,18,32,.72);">{c.contact.formNote}</p>
 
