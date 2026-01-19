@@ -2,6 +2,25 @@ import type { MiddlewareHandler } from "astro";
 
 const SUPPORTED = ["nl", "en", "it"];
 const COOKIE_NAME = "idex_lang";
+const COUNTRY_HEADERS = [
+  "cf-ipcountry",
+  "x-vercel-ip-country",
+  "x-country-code",
+  "x-geo-country",
+  "x-client-country",
+  "x-appengine-country",
+];
+
+const langFromCountry = (headers: Headers) => {
+  for (const key of COUNTRY_HEADERS) {
+    const raw = headers.get(key);
+    if (!raw) continue;
+    const code = raw.split(",")[0]?.trim().toUpperCase();
+    if (code === "NL") return "nl";
+    if (code === "IT") return "it";
+  }
+  return null;
+};
 
 const pickLang = (headerValue: string | null) => {
   if (!headerValue) return "en";
@@ -28,7 +47,12 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     const cookie = context.request.headers.get("cookie") || "";
     const match = cookie.match(new RegExp(`${COOKIE_NAME}=([^;]+)`));
     const pref = match?.[1];
-    const lang = pref && SUPPORTED.includes(pref) ? pref : pickLang(context.request.headers.get("accept-language"));
+    const langFromCookie = pref && SUPPORTED.includes(pref) ? pref : null;
+    const langFromGeo = langFromCountry(context.request.headers);
+    const lang =
+      langFromCookie ||
+      langFromGeo ||
+      pickLang(context.request.headers.get("accept-language"));
     return context.redirect(`/${lang}/${search}`);
   }
   return next();

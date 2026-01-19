@@ -75,3 +75,18 @@ Als je geen `ecosystem.config.js` gebruikt, restart dan op app-naam:
 ```sh
 pm2 restart jouw-app-naam
 ```
+
+
+### push en deploy
+
+cd "C:\Eigen bedrijf\Websites\idex supply\idex-supply-site"
+git add src/pages/[lang]/contact.astro
+git commit -m "Align contact cards and remove kicker"
+git push origin main
+
+
+cd /var/www/idex-supply-site
+git fetch origin
+git reset --hard origin/main
+npm run build
+sudo systemctl restart idex-supply-site
