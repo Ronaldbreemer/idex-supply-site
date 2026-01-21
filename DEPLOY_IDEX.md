@@ -36,3 +36,6 @@ deploy-idex
 ## Belangrijk
 - .env blijft alleen op de server (nooit pushen naar GitHub)
 - Wijzigingen worden pas live na git push + deploy
+
+## SSH
+ssh -i "C:\Users\ronal\.ssh\ssh-key-2026-01-10.key" root@46.224.208.213

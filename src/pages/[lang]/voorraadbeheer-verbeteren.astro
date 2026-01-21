@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+const metaTitle =
+  lang === "nl"
+    ? "Voorraadbeheer verbeteren: minder spoed, meer leverbetrouwbaarheid | IDEX Supply"
+    : "Inventory control improvements | IDEX Supply";
+const metaDesc =
+  lang === "nl"
+    ? "Voorraadbeheer verbeteren met KPI dashboards, uitzonderingen en heldere acties. Start met een Supply Scan en automatiseer stap voor stap."
+    : "Improve inventory control with clear KPIs, exceptions, and action lists.";
+---
+<BaseLayout title={metaTitle} description={metaDesc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">IDEX Supply</div>
+        <h1 style="margin-top:10px;">Voorraadbeheer verbeteren</h1>
+        <p style="margin-top:12px; max-width:90ch;">
+          Voorraadbeheer verbeteren begint bij zicht op uitzonderingen en heldere acties. IDEX Supply
+          levert KPI dashboards, signalen en workflows die direct aansluiten op het MKB.
+        </p>
+
+        <div class="grid cols-3" style="margin-top:16px;">
+          <div class="card flat">
+            <h3>KPI dashboards</h3>
+            <p style="margin-top:8px;">
+              Service level, omloopsnelheid en out-of-stock in een overzicht dat je team begrijpt.
+            </p>
+          </div>
+          <div class="card flat">
+            <h3>Uitzonderingen</h3>
+            <p style="margin-top:8px;">
+              Misgrijpen, backorders en afwijkende lead times direct zichtbaar met prioriteit.
+            </p>
+          </div>
+          <div class="card flat">
+            <h3>Actielijsten</h3>
+            <p style="margin-top:8px;">
+              Wie doet wat, wanneer, met duidelijk eigenaarschap en meetbaar resultaat.
+            </p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h2>Inkoop organiseren zonder lock-in</h2>
+        <p style="margin-top:10px; max-width:92ch;">
+          We starten met een Supply Scan en leveren vaste scope tegen vaste prijs. Daarna kun je
+          gecontroleerd automatiseren, zonder vendor lock-in of grote ERP trajecten.
+        </p>
+
+        <div class="btnrow" style="margin-top:14px;">
+          <a class="btn btn-primary" href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+          <a class="btn btn-ghost" href={L("standaardsoftware")}>{c.nav.standaard}</a>
+          <a class="btn btn-ghost" href={L("faq")}>{c.nav.faq}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker="IDEX Supply"
+    title="Klaar om voorraadbeheer te verbeteren?"
+    body="Plan een intake of start met een Supply Scan. Dan weet je direct waar de grootste winst zit."
+    primaryHref={L("contact") + "?intent=intake"}
+    primaryLabel={c.cta.intake}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>

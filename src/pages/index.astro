@@ -30,6 +30,9 @@ const js = String.raw`(() => {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>{c.common.brandName}</title>
+    <style>
+      body{opacity:0;}
+    </style>
     <script is:inline>{js}</script>
     <style>
       :root{ color-scheme: light; }
@@ -41,6 +44,7 @@ const js = String.raw`(() => {
   </head>
   <body>
     <noscript>
+      <style>body{opacity:1;}</style>
       <div class="noscript">
         <p>{c.common.noscriptNotice}</p>
         <p>
@@ -50,5 +54,12 @@ const js = String.raw`(() => {
         </p>
       </div>
     </noscript>
+    <script is:inline>
+      {`if (location.search.includes("noredirect=1")) {
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.style.opacity = "1";
+        });
+      }`}
+    </script>
   </body>
 </html>

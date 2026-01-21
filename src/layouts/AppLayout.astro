@@ -1,11 +1,86 @@
 ---
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
+import { SUPPORTED, t } from "../lib/i18n";
 
 const { title, description, lang } = Astro.props;
 const metaTitle = title ?? "IDEX Supply App";
 const metaDesc = description ?? "IDEX Supply App demo";
 const currentLang = lang ?? "en";
+const c = t(currentLang);
+const site = Astro.site;
+const path = Astro.url.pathname;
+const parts = path.split("/").filter(Boolean);
+const slugParts = parts[0] && SUPPORTED.includes(parts[0]) ? parts.slice(1) : parts;
+const slug = slugParts.join("/");
+const pathForLang = (target) => {
+  const base = `/${target}/${slug}`.replace(/\/$/, "");
+  return `${base}/`;
+};
+const canonicalUrl = site ? new URL(path, site).toString() : undefined;
+const [streetAddress, postalLine, countryName] = c.contact?.address ?? [];
+const postalMatch = postalLine ? postalLine.match(/^([0-9]{4}\s?[A-Z]{2})\s+(.*)$/) : null;
+const address = streetAddress
+  ? {
+      "@type": "PostalAddress",
+      streetAddress,
+      postalCode: postalMatch ? postalMatch[1] : undefined,
+      addressLocality: postalMatch ? postalMatch[2] : postalLine,
+      addressCountry: countryName,
+    }
+  : undefined;
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: c.contact?.company ?? c.common?.brandName,
+  url: site ? site.toString() : undefined,
+  telephone: c.contact?.phoneTel,
+  email: c.contact?.email,
+  address,
+};
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: metaTitle,
+  description: metaDesc,
+  provider: { "@type": "Organization", name: c.contact?.company ?? c.common?.brandName },
+  areaServed: "NL",
+};
+const breadcrumbItems = site
+  ? (() => {
+      const items = [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: new URL(`/${currentLang}/`, site).toString(),
+        },
+      ];
+      const segs = path.split("/").filter(Boolean);
+      if (segs[0] && SUPPORTED.includes(segs[0])) segs.shift();
+      let acc = `/${currentLang}/`;
+      segs.forEach((seg, index) => {
+        acc += `${seg}/`;
+        items.push({
+          "@type": "ListItem",
+          position: index + 2,
+          name: seg.replace(/-/g, " "),
+          item: new URL(acc, site).toString(),
+        });
+      });
+      return items;
+    })()
+  : null;
+const breadcrumbSchema = breadcrumbItems
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    }
+  : null;
+const schemaJson = JSON.stringify(
+  [orgSchema, serviceSchema, breadcrumbSchema].filter(Boolean),
+);
 ---
 <!doctype html>
 <html lang={currentLang}>
@@ -14,6 +89,13 @@ const currentLang = lang ?? "en";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={metaDesc} />
     <title>{metaTitle}</title>
+    {schemaJson && <script type="application/ld+json">{schemaJson}</script>}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    {site &&
+      SUPPORTED.map((code) => (
+        <link rel="alternate" hreflang={code} href={new URL(pathForLang(code), site).toString()} />
+      ))}
+    {site && <link rel="alternate" hreflang="x-default" href={new URL(pathForLang("en"), site).toString()} />}
   </head>
   <body>
     <Nav lang={currentLang} />

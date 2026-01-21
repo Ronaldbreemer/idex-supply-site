@@ -1,5 +1,6 @@
 import type { MiddlewareHandler } from "astro";
 
+const CANONICAL_HOST = "idexsupply.nl";
 const SUPPORTED = ["nl", "en", "it"];
 const COOKIE_NAME = "idex_lang";
 const COUNTRY_HEADERS = [
@@ -35,7 +36,29 @@ const pickLang = (headerValue: string | null) => {
   return "en";
 };
 
+const isBot = (userAgent: string | null) => {
+  if (!userAgent) return false;
+  return /bot|crawler|spider|crawling|slurp|bingpreview|facebookexternalhit|whatsapp|telegrambot|discordbot|linkedinbot|twitterbot/i.test(
+    userAgent,
+  );
+};
+
 export const onRequest: MiddlewareHandler = async (context, next) => {
+  const hostHeader = context.request.headers.get("x-forwarded-host")
+    || context.request.headers.get("host")
+    || context.url.host;
+  const protoHeader = context.request.headers.get("x-forwarded-proto")
+    || context.url.protocol.replace(":", "");
+  const bypassRedirect = !hostHeader
+    || hostHeader.includes("localhost")
+    || hostHeader.startsWith("127.0.0.1");
+  if (!bypassRedirect && (hostHeader !== CANONICAL_HOST || protoHeader !== "https")) {
+    const target = new URL(context.url.toString());
+    target.host = CANONICAL_HOST;
+    target.protocol = "https:";
+    return context.redirect(target.toString(), 301);
+  }
+
   const { pathname, search } = context.url;
   const seg = pathname.split("/").filter(Boolean)[0];
   if (seg && SUPPORTED.includes(seg)) {
@@ -48,7 +71,9 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     const match = cookie.match(new RegExp(`${COOKIE_NAME}=([^;]+)`));
     const pref = match?.[1];
     const langFromCookie = pref && SUPPORTED.includes(pref) ? pref : null;
-    const langFromGeo = langFromCountry(context.request.headers);
+    const ua = context.request.headers.get("user-agent");
+    const bot = isBot(ua);
+    const langFromGeo = bot ? null : langFromCountry(context.request.headers);
     const lang =
       langFromCookie ||
       langFromGeo ||

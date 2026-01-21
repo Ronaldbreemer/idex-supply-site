@@ -10,9 +10,17 @@ const c = t(lang);
 const L = (slug: string) => withLang(lang, slug);
 const ui = c.appDemo;
 const active = "inventory";
+const metaTitle =
+  lang === "nl"
+    ? "Supply chain optimaliseren met KPI's & uitzonderingen | App demo - IDEX Supply"
+    : `${ui.pageTitle} — IDEX Supply`;
+const metaDesc =
+  lang === "nl"
+    ? "Demo om de supply chain te optimaliseren met KPI dashboards, uitzonderingen en acties voor voorraad en inkoop."
+    : ui.heroSub;
 ---
 
-<AppLayout title={`${ui.pageTitle} — IDEX Supply`} description={ui.heroSub} lang={lang}>
+<AppLayout title={metaTitle} description={metaDesc} lang={lang}>
   <div class="consoleWrap">
     <div class="container">
       <div class="consoleShell">

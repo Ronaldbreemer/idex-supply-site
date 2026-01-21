@@ -9,8 +9,13 @@ export function getStaticPaths() {
 const lang = langFromParams(Astro.params);
 const c = t(lang);
 const L = (slug: string) => withLang(lang, slug);
+const metaTitle = `${c.garanties.title} — IDEX Supply`;
+const metaDesc =
+  lang === "nl"
+    ? "Automatiseren met duidelijke garanties: fixed scope, overdraagbaar en support zonder lock-in."
+    : c.meta.desc;
 ---
-<BaseLayout title={`${c.garanties.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+<BaseLayout title={metaTitle} description={metaDesc} lang={lang}>
   <section class="section">
     <div class="container">
       <div class="card">

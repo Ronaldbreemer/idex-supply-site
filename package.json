@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.0.0",
+    "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.16.11",
     "nodemailer": "^7.0.12"
   },

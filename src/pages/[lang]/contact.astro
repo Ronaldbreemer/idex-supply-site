@@ -22,6 +22,9 @@ const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
         <p style="margin-top:12px;">{c.contact.intro}</p>
         {sent ? <p class="badge" style="margin-top:12px;">{c.contact.successMessage}</p> : null}
         {error ? <p class="badge" style="margin-top:12px;">{c.contact.errorMessage}</p> : null}
+        {sent ? (
+          <script is:inline>{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('event','intake',{method:'form',form_name:'contact',form_location:'${Astro.url.pathname}'});`}</script>
+        ) : null}
 
         <div class="split" style="margin-top:14px;">
           <div class="card flat">
@@ -65,4 +68,26 @@ const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
       </div>
     </div>
   </section>
+  <script is:inline>
+    {`(() => {
+      const safeGtag = (name, params) => {
+        if (typeof window === "undefined") return;
+        if (typeof window.gtag === "function") {
+          window.gtag("event", name, params || {});
+          return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(["event", name, params || {}]);
+      };
+      document.addEventListener("click", (event) => {
+        const target = event.target && event.target.closest ? event.target.closest("a") : null;
+        if (!target || !target.href) return;
+        if (target.href.startsWith("tel:")) {
+          safeGtag("intake", { method: "phone", link_url: target.href });
+        } else if (target.href.startsWith("mailto:")) {
+          safeGtag("intake", { method: "email", link_url: target.href });
+        }
+      });
+    })();`}
+  </script>
 </BaseLayout>

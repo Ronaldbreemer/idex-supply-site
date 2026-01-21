@@ -79,11 +79,15 @@ pm2 restart jouw-app-naam
 
 ### push en deploy
 
+
+
 cd "C:\Eigen bedrijf\Websites\idex supply\idex-supply-site"
 git add src/pages/[lang]/contact.astro
 git commit -m "Align contact cards and remove kicker"
 git push origin main
 
+
+ssh -i "C:\Users\ronal\.ssh\ssh-key-2026-01-10.key" root@46.224.208.213
 
 cd /var/www/idex-supply-site
 git fetch origin

@@ -7,8 +7,13 @@ export function getStaticPaths() {
 }
 const lang = langFromParams(Astro.params);
 const c = t(lang);
+const metaTitle = `${c.faq.title} — IDEX Supply`;
+const metaDesc =
+  lang === "nl"
+    ? "Antwoorden over voorraadbeheer verbeteren, inkoop organiseren en supply chain optimaliseren met KPI dashboards en uitzonderingen."
+    : c.meta.desc;
 ---
-<BaseLayout title={`${c.faq.title} — IDEX Supply`} description={c.meta.desc} lang={lang}>
+<BaseLayout title={metaTitle} description={metaDesc} lang={lang}>
   <section class="section">
     <div class="container">
       <div class="card">

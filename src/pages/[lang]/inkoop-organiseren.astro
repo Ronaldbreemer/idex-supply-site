@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTA from "../../components/CTA.astro";
+import { langFromParams, t, withLang } from "../../lib/i18n";
+
+export function getStaticPaths() {
+  return ["nl", "en", "it"].map((lang) => ({ params: { lang } }));
+}
+const lang = langFromParams(Astro.params);
+const c = t(lang);
+const L = (slug: string) => withLang(lang, slug);
+const metaTitle =
+  lang === "nl"
+    ? "Inkoop organiseren voor MKB: grip op data en uitzonderingen | IDEX Supply"
+    : "Purchasing organization for SMBs | IDEX Supply";
+const metaDesc =
+  lang === "nl"
+    ? "Inkoop organiseren met KPI dashboards, uitzonderingen en heldere regels. Automatiseren zonder lock-in."
+    : "Organize purchasing with clear KPIs, exceptions, and rules.";
+---
+<BaseLayout title={metaTitle} description={metaDesc} lang={lang}>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="kicker">IDEX Supply</div>
+        <h1 style="margin-top:10px;">Inkoop organiseren</h1>
+        <p style="margin-top:12px; max-width:90ch;">
+          Inkoop organiseren vraagt om duidelijke regels, betrouwbare data en zicht op uitzonderingen.
+          IDEX Supply bouwt modules die direct aansluiten op de werkvloer van het MKB.
+        </p>
+
+        <div class="grid cols-3" style="margin-top:16px;">
+          <div class="card flat">
+            <h3>Inkoopregels</h3>
+            <p style="margin-top:8px;">
+              Replenishment regels, safety stock en reorder points die helder en controleerbaar zijn.
+            </p>
+          </div>
+          <div class="card flat">
+            <h3>Leveranciers</h3>
+            <p style="margin-top:8px;">
+              OTIF en lead time afwijkingen zichtbaar, zodat je risico's vroeg ziet.
+            </p>
+          </div>
+          <div class="card flat">
+            <h3>Exception management</h3>
+            <p style="margin-top:8px;">
+              Backorders en afwijkingen direct prioriteren op impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h2>Automatiseren zonder lock-in</h2>
+        <p style="margin-top:10px; max-width:92ch;">
+          Start met een Supply Scan en automatiseer daarna stap voor stap. Fixed scope, vaste prijs,
+          overdraagbaar en passend bij je bestaande systemen.
+        </p>
+
+        <div class="btnrow" style="margin-top:14px;">
+          <a class="btn btn-primary" href={L("contact") + "?intent=intake"}>{c.cta.intake}</a>
+          <a class="btn btn-ghost" href={L("werkwijze")}>{c.nav.werkwijze}</a>
+          <a class="btn btn-ghost" href={L("faq")}>{c.nav.faq}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    kicker="IDEX Supply"
+    title="Klaar om inkoop te organiseren?"
+    body="Plan een intake of start met een Supply Scan om direct de grootste winst te vinden."
+    primaryHref={L("contact") + "?intent=intake"}
+    primaryLabel={c.cta.intake}
+    secondaryHref={L("contact") + "?intent=scan"}
+    secondaryLabel={c.cta.scan}
+    metaItems={c.cta.meta}
+  />
+</BaseLayout>
