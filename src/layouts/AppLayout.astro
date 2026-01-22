@@ -95,7 +95,7 @@ const schemaJson = JSON.stringify(
       SUPPORTED.map((code) => (
         <link rel="alternate" hreflang={code} href={new URL(pathForLang(code), site).toString()} />
       ))}
-    {site && <link rel="alternate" hreflang="x-default" href={new URL(pathForLang("en"), site).toString()} />}
+    {site && <link rel="alternate" hreflang="x-default" href={new URL(pathForLang("nl"), site).toString()} />}
   </head>
   <body>
     <Nav lang={currentLang} />

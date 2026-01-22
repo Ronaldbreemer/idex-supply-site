@@ -102,7 +102,7 @@ const schemaJson = JSON.stringify(
       SUPPORTED.map((code) => (
         <link rel="alternate" hreflang={code} href={new URL(pathForLang(code), site).toString()} />
       ))}
-    {site && <link rel="alternate" hreflang="x-default" href={new URL(pathForLang("en"), site).toString()} />}
+    {site && <link rel="alternate" hreflang="x-default" href={new URL(pathForLang("nl"), site).toString()} />}
     {gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
     {gaId && (
       <script is:inline>{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}',{anonymize_ip:true});`}</script>
