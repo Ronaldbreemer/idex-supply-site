@@ -50,7 +50,11 @@ const intentParam = (Astro.url.searchParams.get("intent") || "").toLowerCase();
 
             <form method="post" action="/api/contact/" style="margin-top:12px; display:grid; gap:10px;">
               <input type="hidden" name="lang" value={lang} />
-              <select name="intent" class="btn" style="border-radius:14px; justify-content:flex-start;">
+              <select
+                name="intent"
+                class="btn"
+                style="border-radius:14px; justify-content:flex-start; appearance:none; padding-right:40px; background-repeat:no-repeat; background-position:right 16px center; background-size:12px 8px; background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%230b1220' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>&quot;);"
+              >
                 <option value="scan" selected={intentParam === "scan"}>{c.contact.intentScan}</option>
                 <option value="intake" selected={intentParam === "intake"}>{c.contact.intentIntake}</option>
               </select>
